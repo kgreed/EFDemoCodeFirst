@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0D8A41F-C2A2-4F40-8FE1-63A668935EF9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EFDemo.Module.Win</RootNamespace>
+    <AssemblyName>EFDemo.Module.Win</AssemblyName>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EmbeddedResourceUseDependentUponConvention>false</EmbeddedResourceUseDependentUponConvention>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DefineConstants>DXCORE3</DefineConstants>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Deterministic>false</Deterministic>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CodeFirst;DXCORE3</DefineConstants>
+    <LangVersion>6</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CodeFirst;DXCORE3</DefineConstants>
+    <LangVersion>6</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.3.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.3.1" /> 
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp.Office.Win" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.PivotChart.Win" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Win" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Scheduler.Win" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Blazor.All" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation.Win" Version="21.1.4" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.EF" Version="21.1.4" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.3.1" />
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\WinDateEditCalendarController.cs" />
+    <Compile Include="Controllers\WinTooltipController.cs" />
+    <Compile Include="Controllers\WinTooltipController.Designer.cs">
+      <DependentUpon>WinTooltipController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DemoAboutInfoController.cs" />
+    <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="EFDemoWinModule.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EFDemoWinModule.Designer.cs">
+      <DependentUpon>EFDemoWinModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\WinDateEditCalendarController.resx" />
+    <EmbeddedResource Include="Controllers\WinTooltipController.resx">
+      <DependentUpon>WinTooltipController.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml">
+      <Subtype>Designer</Subtype>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EFDemo.Module\EFDemo.Module.NetCore.Desktop.csproj" />
+  </ItemGroup>
+</Project>

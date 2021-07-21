@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="ExpressAppLogo">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.EF.Note">
+      <OwnMembers>
+        <Member Name="Text" PropertyEditorType="DevExpress.ExpressApp.Office.Win.RichTextPropertyEditor" DocumentStorageFormat="HTML" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Options UIType="TabbedMDI" Skin="Office 2013 Light Gray" FormStyle="Ribbon">
+    <RibbonOptions RibbonControlStyle="Office2013" />
+  </Options>
+  <Templates>
+    <Template Id="DevExpress.ExpressApp.Win.Templates.Ribbon.MainRibbonFormV2" IsNewNode="True">
+      <FormStates IsNewNode="True">
+        <FormState Id="Default" State="Maximized" IsNewNode="True" />
+      </FormStates>
+    </Template>
+    <Template Id="DevExpress.ExpressApp.Win.Templates.Ribbon.LightStyleMainRibbonForm" IsNewNode="True">
+      <FormStates IsNewNode="True">
+        <FormState Id="Default" State="Maximized" IsNewNode="True" />
+      </FormStates>
+    </Template>
+  </Templates>
+  <SchemaModules>
+    <SchemaModule Name="SchedulerModuleBase" Version="13.1.1.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="13.1.1.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="13.1.1.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="13.1.6.0" />
+    <SchemaModule Name="ValidationModule" Version="13.1.1.0" />
+    <SchemaModule Name="ViewVariantsModule" Version="13.1.1.0" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Employee_ListView">
+      <Columns>
+        <ColumnInfo Id="Department" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Note_ListView">
+      <Columns>
+        <ColumnInfo Id="Text" CustomHeight="20" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Employee_DetailView">      
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="64.60807600950119">
+            <LayoutGroup Id="Person" RelativeSize="65.07352941176471">
+              <LayoutGroup Id="Person_col1" RelativeSize="66.847826086956516">
+                <LayoutItem Id="FirstName" RelativeSize="9.9378881987577632" />
+                <LayoutItem Id="MiddleName" RelativeSize="7.4534161490683228" />
+                <LayoutItem Id="LastName" RelativeSize="7.4534161490683228" />
+                <LayoutItem Id="FullName" RelativeSize="7.4534161490683228" />
+                <LayoutItem Id="Email" RelativeSize="7.4534161490683228" />
+                <LayoutItem Id="Birthday" RelativeSize="60.248447204968947" />
+              </LayoutGroup>
+              <LayoutGroup Id="Person_col2" RelativeSize="33.152173913043477">
+                <LayoutItem Id="Birthday" Removed="True" />
+                <LayoutItem Id="Photo" RelativeSize="91.925465838509311" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Employee" RelativeSize="34.9264705882353">
+              <LayoutGroup Id="Employee_col1" RelativeSize="48.913043478260867">
+                <LayoutItem Id="TitleOfCourtesy" RelativeSize="20" />
+                <LayoutItem Id="NickName" RelativeSize="15" />
+                <LayoutItem Id="SpouseName" RelativeSize="15" />
+                <LayoutItem Id="Anniversary" RelativeSize="15" />
+                <LayoutItem Id="Address1" RelativeSize="15" />
+              </LayoutGroup>
+              <LayoutGroup Id="Employee_col2" RelativeSize="51.086956521739133">
+                <LayoutItem Id="Department" ViewItem="Department" Index="0" RelativeSize="20" IsNewNode="True" />
+                <LayoutItem Id="Department.Office" Index="1" RelativeSize="15" />
+                <LayoutItem Id="Position" Index="2" RelativeSize="15" />
+                <LayoutItem Id="Manager" Index="3" RelativeSize="15" />
+                <LayoutItem Id="Address2" Index="4" RelativeSize="15" />
+                <LayoutItem Id="WebPageAddress" Index="5" RelativeSize="20" />
+                <LayoutItem Id="DisplayDepartment" RelativeSize="20" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="30.878859857482187">
+            <LayoutGroup Id="Resumes" RelativeSize="100">
+              <LayoutItem Id="Resumes" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Tasks" Index="1" />
+            <LayoutGroup Id="Employees" Index="2" RelativeSize="100">
+              <LayoutItem Id="Employees" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="PhoneNumbers" Index="3" />
+            <LayoutGroup Id="AssignedTasks" RelativeSize="100">
+              <LayoutItem Id="AssignedTasks" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SizeableEditors" ShowCaption="False" Index="2" RelativeSize="4.513064133016627">
+            <LayoutItem Id="Notes" Index="0" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
